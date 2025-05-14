@@ -7,6 +7,32 @@
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Control when your content shines—perfect for time-sensitive promotions and special events!",
+	"attributes": {
+		"visibleFrom": {
+			"type": "string",
+			"default": ""
+		},
+		"visibleUntil": {
+			"type": "string",
+			"default": ""
+		},
+		"visibilityType": {
+			"type": "string",
+			"default": "show"
+		},
+		"timeOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"fallbackMessage": {
+			"type": "string",
+			"default": "This content is not available."
+		},
+		"hideType": {
+			"type": "string",
+			"default": "remove"
+		}
+	},
 	"example": {},
 	"supports": {
 		"html": false
