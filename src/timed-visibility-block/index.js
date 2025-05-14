@@ -11,6 +11,11 @@ import save from './save';
 import metadata from './block.json';
 
 /**
+ * Styles
+ */
+import './editor.scss';
+
+/**
  * Every block starts by registering a new block type definition.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
