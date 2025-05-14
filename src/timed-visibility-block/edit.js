@@ -2,12 +2,31 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
+import {
+	InspectorControls,
+	useBlockProps,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
 
-export default function Edit() {
+/**
+ * Local dependencies
+ */
+import DateTimeSelector from './Components/DateTimeSelector';
+
+export default function Edit({ attributes, setAttributes }) {
+	const {
+		visibleFrom,
+		visibleUntil,
+		timeOnly,
+		fallbackMessage,
+		visibilityType,
+	} = attributes;
+
+	const blockProps = useBlockProps();
+	const innerBlocksProps = useInnerBlocksProps(blockProps);
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Timed Visibility Block – hello from the editor!', 'timed-visibility-block' ) }
-		</p>
+		<>
+			<div {...innerBlocksProps} />
+		</>
 	);
 }
