@@ -12,7 +12,23 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-?>
-<p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Timed Visibility Block – hello from a dynamic block!', 'timed-visibility-block' ); ?>
-</p>
+
+// Get current time.
+$current_time = current_time( 'timestamp' );
+
+// Convert datetime strings to timestamps for comparison.
+$visible_from  = ! empty( $attributes['visibleFrom'] ) ? strtotime( $attributes['visibleFrom'] ) : null;
+$visible_until = ! empty( $attributes['visibleUntil'] ) ? strtotime( $attributes['visibleUntil'] ) : null;
+
+if ( empty( $current_time ) || empty( $visible_from ) || empty( $visible_until ) ) {
+	// If one of these empty, return.
+	return;
+}
+
+if ( $current_time >= $visible_from && $current_time <= $visible_until ) {
+	// Get Visibility type.
+	$visibility_type = ! empty( $attributes['visibilityType'] ) ? $attributes['visibilityType'] : 'show';
+	if ( 'show' === $visibility_type ) {
+		echo wp_kses_post( $content );
+	}
+}
