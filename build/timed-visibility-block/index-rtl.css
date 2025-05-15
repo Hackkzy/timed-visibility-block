@@ -1,0 +1,68 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/css-loader@6.11.0_webpack@5.99.8/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_postcss@8.5.3_webpack@5.99.8/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/.pnpm/sass-loader@16.0.5_sass@1.87.0_webpack@5.99.8/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/timed-visibility-block/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Timed Visibility Block - DateTimeSelector Styles */
+.tvb-date-time__field {
+  border-radius: 2px;
+  border: 1px solid var(--wp-components-color-gray-600, #949494);
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #808080;
+}
+.tvb-date-time__field .components-button {
+  padding: 0;
+}
+.tvb-date-time__field .components-button.is-link {
+  color: #808080;
+  justify-content: flex-start;
+  min-height: 40px;
+  text-decoration: none;
+  width: 100%;
+}
+.tvb-date-time__field .components-button.is-link svg {
+  margin: 4px 8px 4px 0;
+}
+.tvb-date-time__field .components-button.is-link span {
+  padding: 8px;
+}
+.tvb-date-time__field .components-button:first-child {
+  padding-left: 30px;
+  width: 100%;
+}
+.tvb-date-time__field .components-button.tvb-date-time__clear-button {
+  position: absolute;
+  left: 18px;
+  max-height: 34px;
+  min-width: 24px;
+  padding: 2px;
+  margin: 5px 4px;
+}
+.tvb-date-time__field.has-value .components-button.is-link {
+  color: #333;
+}
+
+/* Timed Visibility Block - Date/Time calendar popover styles */
+.tvb-date-time__popover .components-popover__content {
+  padding: 16px;
+}
+.tvb-date-time__popover .tvb-date-time__popover-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.tvb-date-time__popover .tvb-date-time__popover-header h2 {
+  color: #1e1e1e;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+.tvb-date-time__popover.is-expanded .components-popover__header {
+  display: none;
+}
+.tvb-date-time__popover .components-datetime {
+  padding: 0;
+}
