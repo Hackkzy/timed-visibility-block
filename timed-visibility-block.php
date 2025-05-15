@@ -25,3 +25,5 @@ function timed_vblck_block_init() {
 	register_block_type( __DIR__ . '/build/timed-visibility-block' );
 }
 add_action( 'init', 'timed_vblck_block_init' );
+
+require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'app/includes/common-functions.php';
