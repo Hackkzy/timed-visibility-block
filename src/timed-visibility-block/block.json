@@ -26,7 +26,7 @@
 		},
 		"fallbackMessage": {
 			"type": "string",
-			"default": "Stay tuned! Content will be available soon."
+			"default": ""
 		},
 		"hideType": {
 			"type": "string",
