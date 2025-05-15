@@ -114,7 +114,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<TextControl
 						label={__('Alternative Text', 'timed-visibility-block')}
 						help={__(
-							'Text shown to visitors when content is not displayed',
+							"Control what visitors see when your content isn't live — leave it blank to show nothing at all.",
 							'timed-visibility-block'
 						)}
 						value={fallbackMessage}
