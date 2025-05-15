@@ -18,6 +18,7 @@ export default function DateTimeSelector({
 	currentDate,
 	isCompact,
 	onChange,
+	placeholderText = __('Pick Date & Time', 'timed-visibility-block'),
 	...additionalProps
 }) {
 	const [pickerOpen, setPickerOpen] = useState(false);
@@ -47,7 +48,7 @@ export default function DateTimeSelector({
 
 	const dateTimeDisplay = currentDate
 		? format('F j, Y g:i a', currentDate)
-		: __('Pick Date & Time', 'timed-visibility-block');
+		: placeholderText;
 
 	return (
 		<BaseControl

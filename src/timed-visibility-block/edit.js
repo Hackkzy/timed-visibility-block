@@ -36,9 +36,24 @@ export default function Edit({ attributes, setAttributes }) {
 			{/* Sidebar Settings */}
 			<InspectorControls>
 				<PanelBody
-					title={__('Date & Time Settings', 'timed-visibility-block')}
+					title={__('Schedule', 'timed-visibility-block')}
 					initialOpen={true}
 				>
+					{/* <ToggleControl
+						__nextHasNoMarginBottom
+						label={__(
+							'Daily Schedule (Time Only)',
+							'timed-visibility-block'
+						)}
+						help={__(
+							'Enable to set a recurring daily schedule without specific dates',
+							'timed-visibility-block'
+						)}
+						checked={timeOnly}
+						onChange={(value) => {
+							setAttributes({ timeOnly: value });
+						}}
+					/> */}
 					<DateTimeSelector
 						label={__('Visible From', 'timed-visibility-block')}
 						currentDate={visibleFrom}
@@ -56,22 +71,37 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(value) =>
 							setAttributes({ visibleUntil: value })
 						}
+						placeholderText={
+							visibleFrom
+								? __('Forever', 'timed-visibility-block')
+								: undefined
+						}
 					/>
 				</PanelBody>
 				<PanelBody
-					title={__('Customizations', 'timed-visibility-block')}
+					title={__('Behavior', 'timed-visibility-block')}
 					initialOpen={true}
 				>
 					<SelectControl
 						label={__('Visibility Type', 'timed-visibility-block')}
+						help={__(
+							'Choose whether to show or hide content during your specified time period',
+							'timed-visibility-block'
+						)}
 						value={visibilityType}
 						options={[
 							{
-								label: __('Show', 'timed-visibility-block'),
+								label: __(
+									'Display Content',
+									'timed-visibility-block'
+								),
 								value: 'show',
 							},
 							{
-								label: __('Hide', 'timed-visibility-block'),
+								label: __(
+									'Hide Content',
+									'timed-visibility-block'
+								),
 								value: 'hide',
 							},
 						]}
@@ -82,7 +112,11 @@ export default function Edit({ attributes, setAttributes }) {
 						__nextHasNoMarginBottom
 					/>
 					<TextControl
-						label={__('Fallback Message', 'timed-visibility-block')}
+						label={__('Alternative Text', 'timed-visibility-block')}
+						help={__(
+							'Text shown to visitors when content is not displayed',
+							'timed-visibility-block'
+						)}
 						value={fallbackMessage}
 						onChange={(value) =>
 							setAttributes({ fallbackMessage: value })
