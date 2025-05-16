@@ -27,13 +27,8 @@
 		"fallbackMessage": {
 			"type": "string",
 			"default": ""
-		},
-		"hideType": {
-			"type": "string",
-			"default": "remove"
 		}
 	},
-	"example": {},
 	"supports": {
 		"html": false
 	},
