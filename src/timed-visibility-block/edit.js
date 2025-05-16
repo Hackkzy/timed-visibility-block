@@ -3,22 +3,27 @@
  */
 import { __ } from '@wordpress/i18n';
 import {
+	InspectorControls,
+	useBlockProps,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
+import {
+	Notice,
 	PanelBody,
 	SelectControl,
 	TextControl,
 	ToggleControl,
 } from '@wordpress/components';
-import {
-	InspectorControls,
-	useBlockProps,
-	useInnerBlocksProps,
-} from '@wordpress/block-editor';
 
 /**
  * Local dependencies
  */
 import DateTimeSelector from './Components/DateTimeSelector';
-import { Notice } from '@wordpress/components';
+
+/**
+ * Editor Styles
+ */
+import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
 	const {
