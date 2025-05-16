@@ -6,7 +6,6 @@ import { getSettings as getDateSettings, format } from '@wordpress/date';
 import {
 	Button,
 	BaseControl,
-	TimePicker,
 	DateTimePicker,
 	Popover,
 } from '@wordpress/components';
@@ -43,17 +42,19 @@ export default function DateTimeSelector({
 		...additionalProps,
 	};
 
+	const datetimeformat = isCompact
+		? dateSettings.formats.time || 'g:i a' // Only Time
+		: dateSettings.formats.datetime || 'F j, Y g:i a'; // Full Date and Time
+
 	const dateTimeDisplay = currentDate
-		? isCompact
-			? format('g:i a', currentDate) // Only time
-			: format('F j, Y g:i a', currentDate) // Full date and time
+		? format(datetimeformat, currentDate)
 		: placeholderText;
 
 	return (
 		<BaseControl
 			label={label || ''}
 			help={__(
-				'Time shown reflects the site timezone. Please set date and time accordingly.',
+				"The time shown is based on the site's timezone. Please choose the date and time accordingly.",
 				'timed-visibility-block'
 			)}
 			__nextHasNoMarginBottom
