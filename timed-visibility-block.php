@@ -19,6 +19,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Defining Constants.
+ *
+ * @package bbx-bento-box
+ */
+if ( ! defined( 'TIMED_VBLCK_VERSION' ) ) {
+	/**
+	 * The version of the plugin.
+	 */
+	define( 'TIMED_VBLCK_VERSION', '1.0.0' );
+}
+
+if ( ! defined( 'TIMED_VBLCK_PATH' ) ) {
+	/**
+	 *  The server file system path to the plugin directory.
+	 */
+	define( 'TIMED_VBLCK_PATH', plugin_dir_path( __FILE__ ) );
+}
+
+if ( ! defined( 'TIMED_VBLCK_URL' ) ) {
+	/**
+	 * The url to the plugin directory.
+	 */
+	define( 'TIMED_VBLCK_URL', plugin_dir_url( __FILE__ ) );
+}
+
+if ( ! defined( 'TIMED_VBLCK_BASE_NAME' ) ) {
+	/**
+	 * The url to the plugin directory.
+	 */
+	define( 'TIMED_VBLCK_BASE_NAME', plugin_basename( __FILE__ ) );
+}
+
+/**
  * Registers the Timed Visibility Block using the metadata loaded from the `block.json` file.
  */
 function timed_vblck_block_init() {
@@ -26,4 +59,4 @@ function timed_vblck_block_init() {
 }
 add_action( 'init', 'timed_vblck_block_init' );
 
-require_once trailingslashit( plugin_dir_path( __FILE__ ) ) . 'app/includes/common-functions.php';
+require_once trailingslashit( TIMED_VBLCK_PATH ) . 'app/includes/common-functions.php';
