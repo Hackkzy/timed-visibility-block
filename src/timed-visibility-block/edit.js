@@ -18,6 +18,7 @@ import {
  * Local dependencies
  */
 import DateTimeSelector from './Components/DateTimeSelector';
+import { Notice } from '@wordpress/components';
 
 export default function Edit({ attributes, setAttributes }) {
 	const {
@@ -77,9 +78,25 @@ export default function Edit({ attributes, setAttributes }) {
 								: undefined
 						}
 					/>
+					{visibleFrom > visibleUntil && (
+						<Notice status="warning" isDismissible={false}>
+							{__(
+								'The visibility end time must be later than the start time to work correctly.',
+								'timed-visibility-block'
+							)}
+						</Notice>
+					)}
+					{timeOnly && visibleFrom && !visibleUntil && (
+						<Notice status="warning" isDismissible={false}>
+							{__(
+								'To ensure proper functionality, either specify an end time or disable "Daily Schedule (Time Only)".',
+								'timed-visibility-block'
+							)}
+						</Notice>
+					)}
 				</PanelBody>
 				<PanelBody
-					title={__('Behavior', 'timed-visibility-block')}
+					title={__('Display Behavior', 'timed-visibility-block')}
 					initialOpen={true}
 				>
 					<SelectControl
