@@ -52,6 +52,16 @@ if ( ! defined( 'TIMED_VBLCK_BASE_NAME' ) ) {
 }
 
 /**
+ * Sets translated strings for a script.
+ *
+ * @return void
+ */
+function timed_vblck_script_translations() {
+	wp_set_script_translations( 'timed-vblck-timed-visibility-block-editor-script', 'timed-visibility-block' );
+}
+add_action( 'init', 'timed_vblck_script_translations' );
+
+/**
  * Apply translation file as per WP language.
  */
 function timed_vblck_text_domain_loader() {
