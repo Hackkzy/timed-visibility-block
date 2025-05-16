@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Timed Visibility Block
- * Description:       Control when your content shines—perfect for time-sensitive promotions and special events!
+ * Description:       Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!
  * Version:           1.0.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
@@ -50,6 +50,23 @@ if ( ! defined( 'TIMED_VBLCK_BASE_NAME' ) ) {
 	 */
 	define( 'TIMED_VBLCK_BASE_NAME', plugin_basename( __FILE__ ) );
 }
+
+/**
+ * Apply translation file as per WP language.
+ */
+function timed_vblck_text_domain_loader() {
+
+	// Get mo file as per current locale.
+	$mofile = trailingslashit( TIMED_VBLCK_PATH ) . 'languages/' . get_locale() . '.mo';
+
+	// If file does not exists, then apply default mo.
+	if ( ! file_exists( $mofile ) ) {
+		$mofile = trailingslashit( TIMED_VBLCK_PATH ) . 'languages/default.mo';
+	}
+
+	load_textdomain( 'timed-visibility-block', $mofile );
+}
+add_action( 'plugins_loaded', 'timed_vblck_text_domain_loader' );
 
 /**
  * Registers the Timed Visibility Block using the metadata loaded from the `block.json` file.
