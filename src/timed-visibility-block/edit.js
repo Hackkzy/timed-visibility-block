@@ -83,7 +83,7 @@ export default function Edit({ attributes, setAttributes }) {
 								: undefined
 						}
 					/>
-					{visibleFrom > visibleUntil && (
+					{visibleUntil && visibleFrom > visibleUntil && (
 						<Notice status="warning" isDismissible={false}>
 							{__(
 								'The visibility end time must be later than the start time to work correctly.',
