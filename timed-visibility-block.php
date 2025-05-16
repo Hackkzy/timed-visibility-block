@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Defining Constants.
  *
- * @package bbx-bento-box
+ * @package Timed_Visibility_Block
  */
 if ( ! defined( 'TIMED_VBLCK_VERSION' ) ) {
 	/**
