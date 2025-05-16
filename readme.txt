@@ -2,7 +2,7 @@
 Contributors:      hackkzy404
 Tags:              visibility, schedule content, timed content, content expiration, block
 Requires at least: 6.5
-Tested up to:      6.8.1
+Tested up to:      6.8
 Requires PHP:      7.4
 Stable tag:        1.0.0
 License:           GPL-2.0-or-later
