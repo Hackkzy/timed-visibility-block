@@ -1,0 +1,147 @@
+# Copyright (C) 2025 Hackkzy
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Timed Visibility Block 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/timed-visibility-block\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-05-16T14:34:22+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: timed-visibility-block\n"
+
+#. Plugin Name of the plugin
+#: timed-visibility-block.php
+msgid "Timed Visibility Block"
+msgstr ""
+
+#. Description of the plugin
+#: timed-visibility-block.php
+msgid "Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!"
+msgstr ""
+
+#. Author of the plugin
+#: timed-visibility-block.php
+msgid "Hackkzy"
+msgstr ""
+
+#. Author URI of the plugin
+#: timed-visibility-block.php
+msgid "https://github.com/Hackkzy"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/Components/DateTimeSelector.jsx:20
+msgid "Pick Date & Time"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/Components/DateTimeSelector.jsx:56
+msgid "The time shown is based on the site's timezone. Please choose the date and time accordingly."
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/Components/DateTimeSelector.jsx:65
+msgid "Pick date/time"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/Components/DateTimeSelector.jsx:76
+msgid "Clear date/time"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/Components/DateTimeSelector.jsx:98
+msgid "Close"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:45
+msgid "Schedule"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:50
+msgid "Daily Schedule (Time Only)"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:54
+msgid "Enable to set a recurring daily schedule without specific dates"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:64
+msgid "Visible From"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:74
+msgid "Visible Until"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:82
+msgid "Forever"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:88
+msgid "The visibility end time must be later than the start time to work correctly."
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:96
+msgid "To ensure proper functionality, either specify an end time or disable \"Daily Schedule (Time Only)\"."
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:104
+msgid "Display Behavior"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:108
+msgid "Visibility Type"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:109
+msgid "Choose whether to show or hide content during your specified time period"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:116
+msgid "Display Content"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:123
+msgid "Hide Content"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:137
+msgid "Alternative Text"
+msgstr ""
+
+#: build/timed-visibility-block/index.js:1
+#: src/timed-visibility-block/edit.js:138
+msgid "Control what visitors see when your content isn't live — leave it blank to show nothing at all."
+msgstr ""
+
+#: build/timed-visibility-block/block.json
+#: src/timed-visibility-block/block.json
+msgctxt "block title"
+msgid "Timed Visibility Block"
+msgstr ""
+
+#: build/timed-visibility-block/block.json
+#: src/timed-visibility-block/block.json
+msgctxt "block description"
+msgid "Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!"
+msgstr ""
