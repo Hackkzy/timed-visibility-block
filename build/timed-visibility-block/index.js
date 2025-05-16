@@ -79,18 +79,16 @@ function DateTimeSelector({
   );
   const datePickerProps = {
     startOfWeek: dateSettings.l10n.startOfWeek,
-    currentDate: isCompact ? undefined : currentDate,
-    currentTime: isCompact ? currentDate : undefined,
+    currentDate: currentDate,
     __nextRemoveHelpButton: true,
     __nextRemoveResetButton: true,
     is12Hour,
     onChange,
     ...additionalProps
   };
-
-  // const DatePickerComponent = isCompact ? TimePicker : DateTimePicker;
-
-  const dateTimeDisplay = currentDate ? (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_1__.format)('F j, Y g:i a', currentDate) : placeholderText;
+  const dateTimeDisplay = currentDate ? isCompact ? (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_1__.format)('g:i a', currentDate) // Only time
+  : (0,_wordpress_date__WEBPACK_IMPORTED_MODULE_1__.format)('F j, Y g:i a', currentDate) // Full date and time
+  : placeholderText;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.BaseControl, {
     label: label || '',
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Time shown reflects the site timezone. Please set date and time accordingly.', 'timed-visibility-block'),
@@ -132,9 +130,7 @@ function DateTimeSelector({
           icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
           size: "small"
         })]
-      }), isCompact ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TimePicker, {
-        ...datePickerProps
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.DateTimePicker, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.DateTimePicker, {
         ...datePickerProps
       })]
     })]
@@ -149,7 +145,7 @@ function DateTimeSelector({
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"timed-vblck/timed-visibility-block","version":"1.0.0","title":"Timed Visibility Block","category":"widgets","icon":"clock","description":"Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!","attributes":{"visibleFrom":{"type":"string","default":""},"visibleUntil":{"type":"string","default":""},"visibilityType":{"type":"string","default":"show"},"timeOnly":{"type":"boolean","default":false},"fallbackMessage":{"type":"string","default":"Stay tuned! Content will be available soon."},"hideType":{"type":"string","default":"remove"}},"example":{},"supports":{"html":false},"textdomain":"timed-visibility-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"timed-vblck/timed-visibility-block","version":"1.0.0","title":"Timed Visibility Block","category":"widgets","icon":"clock","description":"Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!","attributes":{"visibleFrom":{"type":"string","default":""},"visibleUntil":{"type":"string","default":""},"visibilityType":{"type":"string","default":"show"},"timeOnly":{"type":"boolean","default":false},"fallbackMessage":{"type":"string","default":""},"hideType":{"type":"string","default":"remove"}},"example":{},"supports":{"html":false},"textdomain":"timed-visibility-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -202,7 +198,17 @@ function Edit({
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Schedule', 'timed-visibility-block'),
         initialOpen: true,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_DateTimeSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+          __nextHasNoMarginBottom: true,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Daily Schedule (Time Only)', 'timed-visibility-block'),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable to set a recurring daily schedule without specific dates', 'timed-visibility-block'),
+          checked: timeOnly,
+          onChange: value => {
+            setAttributes({
+              timeOnly: value
+            });
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_DateTimeSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Visible From', 'timed-visibility-block'),
           currentDate: visibleFrom,
           isCompact: timeOnly,
@@ -239,7 +245,7 @@ function Edit({
           __nextHasNoMarginBottom: true
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Alternative Text', 'timed-visibility-block'),
-          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text shown to visitors when content is not displayed', 'timed-visibility-block'),
+          help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Control what visitors see when your content isn't live — leave it blank to show nothing at all.", 'timed-visibility-block'),
           value: fallbackMessage,
           onChange: value => setAttributes({
             fallbackMessage: value
