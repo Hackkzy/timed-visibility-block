@@ -35,8 +35,7 @@ export default function DateTimeSelector({
 
 	const datePickerProps = {
 		startOfWeek: dateSettings.l10n.startOfWeek,
-		currentDate: isCompact ? undefined : currentDate,
-		currentTime: isCompact ? currentDate : undefined,
+		currentDate: currentDate,
 		__nextRemoveHelpButton: true,
 		__nextRemoveResetButton: true,
 		is12Hour,
@@ -44,10 +43,10 @@ export default function DateTimeSelector({
 		...additionalProps,
 	};
 
-	// const DatePickerComponent = isCompact ? TimePicker : DateTimePicker;
-
 	const dateTimeDisplay = currentDate
-		? format('F j, Y g:i a', currentDate)
+		? isCompact
+			? format('g:i a', currentDate) // Only time
+			: format('F j, Y g:i a', currentDate) // Full date and time
 		: placeholderText;
 
 	return (
@@ -101,11 +100,7 @@ export default function DateTimeSelector({
 							size="small"
 						/>
 					</div>
-					{isCompact ? (
-						<TimePicker {...datePickerProps} />
-					) : (
-						<DateTimePicker {...datePickerProps} />
-					)}
+					<DateTimePicker {...datePickerProps} />
 				</Popover>
 			)}
 		</BaseControl>

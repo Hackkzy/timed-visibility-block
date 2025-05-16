@@ -39,7 +39,7 @@ export default function Edit({ attributes, setAttributes }) {
 					title={__('Schedule', 'timed-visibility-block')}
 					initialOpen={true}
 				>
-					{/* <ToggleControl
+					<ToggleControl
 						__nextHasNoMarginBottom
 						label={__(
 							'Daily Schedule (Time Only)',
@@ -53,7 +53,7 @@ export default function Edit({ attributes, setAttributes }) {
 						onChange={(value) => {
 							setAttributes({ timeOnly: value });
 						}}
-					/> */}
+					/>
 					<DateTimeSelector
 						label={__('Visible From', 'timed-visibility-block')}
 						currentDate={visibleFrom}
