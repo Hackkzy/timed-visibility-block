@@ -3,7 +3,7 @@
  * Plugin Name:       Timed Visibility Block
  * Description:       Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!
  * Version:           1.0.0
- * Requires at least: 6.7
+ * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Hackkzy
  * Author URI:        https://github.com/Hackkzy
