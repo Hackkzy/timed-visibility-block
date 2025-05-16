@@ -30,7 +30,8 @@ if ( empty( $visible_from ) ) {
 	$final_output = $content;
 } else {
 	// Check if current time is within the specified range.
-	$is_within_range = timed_vblck_is_datetime_within_range( $visible_from, $visible_until );
+	$is_time_only    = ! empty( $attributes['timeOnly'] ) ? true : false;
+	$is_within_range = timed_vblck_is_datetime_within_range( $visible_from, $visible_until, $is_time_only );
 	$visibility_type = ! empty( $attributes['visibilityType'] ) ? $attributes['visibilityType'] : 'show';
 
 	// Show content if within range and type is 'show', or if not within range and type is 'hide'.
