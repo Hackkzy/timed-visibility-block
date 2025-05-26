@@ -37,6 +37,11 @@ Yes, you can set a custom fallback message to display in place of the content wh
 = What time zone does the scheduling use? =
 The scheduling uses the WordPress site’s configured time zone.
 
+== Screenshots ==
+1. Add Timed Visibility Block
+2. Add Block content
+3. Configure block settings
+
 == Changelog ==
 = 1.0.0 =
 * Release
