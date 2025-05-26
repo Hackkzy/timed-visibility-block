@@ -5,9 +5,30 @@
   "version": "1.0.0",
   "title": "Timed Visibility Block",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Control when your content shines—perfect for time-sensitive promotions and special events!",
-  "example": {},
+  "icon": "clock",
+  "description": "Control when your content shines. Perfect for announcements, promotions, and time-sensitive information!",
+  "attributes": {
+    "visibleFrom": {
+      "type": "string",
+      "default": ""
+    },
+    "visibleUntil": {
+      "type": "string",
+      "default": ""
+    },
+    "visibilityType": {
+      "type": "string",
+      "default": "show"
+    },
+    "timeOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "fallbackMessage": {
+      "type": "string",
+      "default": ""
+    }
+  },
   "supports": {
     "html": false
   },
@@ -15,6 +36,5 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "render": "file:./render.php"
 }
