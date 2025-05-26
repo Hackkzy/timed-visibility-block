@@ -1,0 +1,40 @@
+name: 🚀 Build & Release
+on:
+    release:
+        types: [released]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 📥 Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: 🛠️ Set Up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - name: 📦 Install Dependencies
+              run: npm install
+
+            - name: 🔨 Build Plugin
+              run: npm run build
+
+            - name: 🚀 Deploy to WordPress Plugin Directory
+              id: deploy
+              uses: 10up/action-wordpress-plugin-deploy@stable
+              with:
+                  generate-zip: true
+              env:
+                  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+                  SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+
+            - name: ⤴️ Upload release asset
+              id: create_release
+              uses: softprops/action-gh-release@v2
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  files: ${{ github.workspace }}/${{ github.event.repository.name }}.zip
