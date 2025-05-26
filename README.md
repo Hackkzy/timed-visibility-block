@@ -1,6 +1,6 @@
 # Timed Visibility Block
 
-[![WordPress](https://img.shields.io/badge/WordPress-6.5+-informational?logo=WordPress&style=flat&logoColor=ffffff&color=3858e9&labelColor=3858e9)](https://wordpress.org/download/releases/6-5/)
+[![WordPress](https://img.shields.io/badge/WordPress-6.6+-informational?logo=WordPress&style=flat&logoColor=ffffff&color=3858e9&labelColor=3858e9)](https://wordpress.org/download/releases/6-6/)
 [![Requires PHP](https://img.shields.io/badge/PHP%207.4%2B-4f5b93?style=flat&logo=php&logoColor=white)](https://www.php.net/releases/7_4_0.php)
 
 Control when your content shines — perfect for time-sensitive promotions and special events!
@@ -49,7 +49,6 @@ Want to improve Timed Visibility Block? Feel free to fork, submit issues, or con
 
 ## 📝 License
 
-GPL-2.0-or-later © hackkzy404  
-[🔗 GNU License](https://www.gnu.org/licenses/gpl-2.0.html)
+GPL-2.0-or-later [🔗 GNU License](https://www.gnu.org/licenses/gpl-2.0.html)
 
 🌟 **Enjoying Timed Visibility Block?** Consider giving it a ⭐ on GitHub! 🚀
